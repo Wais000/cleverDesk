@@ -1,0 +1,107 @@
+/* Container for the entire header */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: #0161aa; /* Brand color */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for both logos */
+.logo img,
+.logoBIC img {
+    width: 140px;
+    height: auto;
+}
+
+/* Header Title */
+.header-title p {
+    font-size: 20px;
+    color: #ffff; /* White color for text */
+    margin: 0;
+    padding: 0 20px;
+    text-align: center;
+    flex: 1; /* Centers the title */
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-button {
+    background-color: #0056b3; /* Button color */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Full width */
+    min-width: 250px; /* Matches dropdown content */
+}
+
+.dropdown-button .fa-tv {
+    margin-right: 8px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    min-width: 250px; /* Matches button width */
+    z-index: 1;
+    top: 40px; /* Position below button */
+}
+
+.dropdown-content a {
+    color: #333; /* Text color */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #e6e6e6; /* Hover effect */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Log Out button */
+.logout-button {
+    background-color: #d9534f; /* Logout button color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.logout-button .fa-sign-out-alt {
+    margin-right: 8px;
+}
+
+.logout-button:hover {
+    background-color: #c9302c; /* Hover effect */
+}
+
+/* Responsive: Adjustments for small screens */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dropdown-content {
+        position: static; /* Adjust for column layout */
+    }
+}

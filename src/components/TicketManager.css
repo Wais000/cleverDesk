@@ -1,0 +1,100 @@
+/* TicketManager.css */
+.container {
+    padding: 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .header, .service {
+
+    margin-bottom: 10px;
+    /* border: 1px solid red; */
+    background-color: #0161aa;
+    padding: 10px;
+    width: 98%;
+  }
+  
+  .header-left h2 {
+    margin: 0;
+    color: #fff;
+  }
+  
+  .header-right {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .create-ticket {
+    margin-bottom: 20px;
+    width: 45%;
+  }
+  
+  .service {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 10px; */
+  }
+  
+  .service-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .service-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+   
+  }
+  
+  .service-item p {
+    margin: 0;
+  }
+  
+  .alle-dienste, .create-ticket {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    width: 45%;
+    background-color: #cecbcb;
+    padding: 20px;
+  }
+  
+  .ticket-item {
+    width: 47%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    /* border: 1px solid red; */
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(119, 136, 153, 0.352);
+    padding: 0px 0px 0px 15px;
+  }
+  
+  .ticket-item h3 {
+    margin: 0;
+  }
+  
+  .quantityContainer {
+    width: 100px;
+    background-color: blue;
+  }
+  
+  .ticketQuantity {
+    background-color: aqua; /* Default color, can be overridden by inline styles */
+    width: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  

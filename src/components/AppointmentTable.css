@@ -1,0 +1,65 @@
+.appointment-table {
+    display: flex;
+    /* flex-direction: c; */
+    flex-wrap: wrap; /* Makes the table flow in a single horizontal line */
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 5px 20px 50px;
+    background-color: #f4f4f4;
+    /* border-radius: 10px; */
+    overflow-x: auto; /* Allows horizontal scrolling for small screens */
+    white-space: nowrap; /* Prevents the blocks from wrapping */
+  }
+  
+  .hour-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligns content to the left */
+    padding: 15px;
+    min-width: 110px; /* Ensures each block has a minimum width */
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(119, 136, 153, 0.352);
+  }
+  
+  .hour-block .hour-label {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .hour-block .appointment-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .free {
+    border-left: 7px solid green;
+  }
+  
+  .busy {
+    border-left: 7px solid red;
+  }
+  
+  .hour-block span {
+    font-size: 14px;
+  }
+  .hour-block span  {
+    font-size: 14px;
+  }
+  
+  @media (min-width: 768px) {
+    .appointment-table {
+      gap: 15px; /* Increases gap between blocks on larger screens */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .appointment-table {
+      gap: 15px;
+    }
+  }
+  

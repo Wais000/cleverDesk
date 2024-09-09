@@ -1,38 +1,70 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 20%;
+  left: -106px; /* Initially hidden (off-screen) */
+  width: 77px;
+  height: 270px;
+  background-color: #0161AA;
+  color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  padding: 25px 15px;
+  transition: left 0.3s ease; /* Smooth transition for the sidebar */
+}
+
+.sidebar.visible {
+  left: 0; /* Shows the sidebar */
+}
+
+/* Toggle Sidebar Button */
+.toggle-sidebar-btn {
+  position: fixed; 
+  top: 330px;
+  left: 0px; /* Initially off-screen */
+  z-index: 1000;
+  background-color: #067cd7;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: left 0.3s ease; /* Smooth transition for the button */
+}
+
+.sidebar.visible + .toggle-sidebar-btn {
+  left: 90px; /* Moves button to visible position when sidebar is shown */
+}
+
+/* Icon item inside the sidebar */
+.icon-item {
+
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.icon-item:hover {
+  background-color: #0e5198;
+}
+
+.icon-item p {
+
+  margin-top: 0px;
+  font-size: 14px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Custom icon size */
+.custom-icon-size {
+  font-size: 1.2rem; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Hover effect for the sidebar button */
+.toggle-sidebar-btn:hover {
+  background-color: #0e5198;
+
 }

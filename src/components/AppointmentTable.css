@@ -37,9 +37,8 @@
   }
   
   .free {
-    border-left: 7px solid green;
+    border-left: 7px solid #A7FCAB
   }
-  
   .busy {
     border-left: 7px solid red;
   }

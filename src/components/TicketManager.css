@@ -1,100 +1,291 @@
-/* TicketManager.css */
+/* Container */
 .container {
-    padding: 20px;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .header, .service {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  background-color: #f4f4f4;
+  align-items: flex-start; /* Aligns children based on their own height */
+}
 
-    margin-bottom: 10px;
-    /* border: 1px solid red; */
-    background-color: #0161aa;
-    padding: 10px;
-    width: 98%;
-  }
-  
-  .header-left h2 {
-    margin: 0;
-    color: #fff;
-  }
-  
-  .header-right {
+/* Create Ticket Section */
+.create-ticket {
+  background: #fff;
+  width: 450px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Remove any height constraints */
+}
+.service {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.service-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.service-item {
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(119, 136, 153, 0.352);
+}
+
+.service-item input {
+  margin: 0 10px;
+  width: 60px;
+}
+
+.service-item button {
+  padding: 5px 10px;
+}
+
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px); /* Adds blur effect */
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+/* Form Styling */
+.ticket-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  /* border: 1px solid red; */
+  border-radius: 12px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  transform: scale(1); /* Initial state */
+}
+.ticket-form:hover {
+  transform: scale(1.02); /* Slight enlarge on hover */
+}
+/* Exit Button */
+.exit-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.exit-button:hover {
+  color: red;
+}
+.form-details {
+  width: 48%;
+}
+.request-details {
+  width: 48%;
+}
+.form-details label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.form-details input,
+.form-details select,
+.form-details textarea {
+  width: 90%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-top: 8px;
+  transition: border 0.2s ease;
+}
+.form-details textarea {
+  height: 100px;
+}
+.form-details input:focus,
+.form-details select:focus,
+.form-details textarea:focus {
+  border-color: #0161aa;
+  outline: none;
+}
+
+.request-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f7f7f7;
+}
+
+.request-header button {
+  padding: 10px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.request-header button:hover {
+  background-color: #0056b3;
+}
+.submit-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.submit-button:hover {
+  background: #0056b3;
+}
+
+/* Alle Dienste Section */
+.alle-dienste {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  background:none;
+  border-radius: 8px;
+  /* border: 1px solid green; */
+  flex-wrap: wrap;
+  width: 50%; 
+  padding: 10px 10px 30px 10px; 
+  gap: 15px; /* Optional for spacing between children */
+
+  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(119, 136, 153, 0.352); */
+
+}
+.toggle-button i {
+  margin-right: 8px; /* Adjust the spacing between the icon and text */
+}
+.header-left {
+  /* font-size: 24px; */
+  padding: 0px;
+  margin-bottom: 8px;
+  width: 100%;
+  height: 45px;
+  /* border: 1px solid red; */
+  /* width:805px; */
+  /* background-color: #fff; */
+}
+.header-left h2,
+.service h2 {
+  background-color: #0161aa;
+  color: #fff;
+  padding: 10px;
+  margin-top: 1px;
+  font-size: 20px;
+}
+
+.ticket-item {
+  height: 50px; /* Let height be defined by content */
+  width: 47%;
+
+  background: #f9f9f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0px 0px 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(119, 136, 153, 0.352);
+}
+/* .ticketQuantity {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  color: black;
+  font-weight: 700;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  width: 10%;
+  justify-content: center;
+} */
+
+
+.ticketQuantity {
     display: flex;
-    gap: 10px;
-  }
-  
-  .create-ticket {
-    margin-bottom: 20px;
-    width: 45%;
-  }
-  
-  .service {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    /* margin-bottom: 10px; */
-  }
-  
-  .service-icons {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .service-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-   
-  }
-  
-  .service-item p {
-    margin: 0;
-  }
-  
-  .alle-dienste, .create-ticket {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    /* border: 1px solid red; */
-    width: 45%;
-    background-color: #cecbcb;
-    padding: 20px;
-  }
-  
-  .ticket-item {
-    width: 47%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    /* border: 1px solid red; */
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(119, 136, 153, 0.352);
-    padding: 0px 0px 0px 15px;
-  }
-  
-  .ticket-item h3 {
-    margin: 0;
-  }
-  
-  .quantityContainer {
-    width: 100px;
-    background-color: blue;
-  }
-  
-  .ticketQuantity {
-    background-color: aqua; /* Default color, can be overridden by inline styles */
-    width: 12%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
+    /* padding: 5px 10px; */
+    color: black;
+    font-weight: 700;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
+    width: 13%;
+    height: 50px;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
   }
   
+  .ticketQuantity::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.093);
+    transition: transform 0.3s ease-in-out;
+    transform: scale(0);
+  
+  }
+  
+  .ticketQuantity:hover::before {
+    transform: scale(1.5);
+ 
+  }
+
+
+/* Button to toggle the lower part visibility */
+.toggle-button {
+  position: fixed;
+  top: 25%;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.toggle-button:hover {
+  background-color: #0056b3;
+}

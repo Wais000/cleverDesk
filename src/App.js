@@ -1,6 +1,7 @@
 import './App.css';
 import AppointmentTable from './components/AppointmentTable';
 import HeaderComponent from './components/HeaderComponent';
+// import TicketTable from './components/TicketTable.js';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
@@ -64,6 +65,8 @@ function App() {
         {/* Main Content (where other components will go, e.g., AppointmentTable) */}
       </div>
       <TicketManager/>
+      {/* <TicketTable/> */}
+
     </div>
   );
 }
